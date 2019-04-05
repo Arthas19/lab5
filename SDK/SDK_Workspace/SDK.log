@@ -137,3 +137,17 @@
 09:39:04.953 INFO  - Refreshed build settings on project hello_world 
 10:33:44.745 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
 10:36:10.473 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:01:33.405 INFO  - Restoring local repository preferences: 
+		 D:\work\lprs2\2013_2014\Resene_vezbe\lab56\basic_system 
+11:01:33.454 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:01:35.887 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:01:35.898 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:01:35.932 WARN  - Unable to determine location of documentation for OS . 
+11:01:35.936 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:01:35.942 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:26.950 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:27.281 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:27.883 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:27.899 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:27.916 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
+11:03:50.063 INFO  - Settings changed on project hello_world_bsp. Triggering a rebuild... 

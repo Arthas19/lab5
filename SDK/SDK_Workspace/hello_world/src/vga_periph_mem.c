@@ -18,7 +18,7 @@ void set_cursor(Xuint32 new_value){
 
 void clear_text_screen(Xuint32 BaseAddress){
 	int i;
-	for (i = 0; i < 4800; i++){
+	for (i = 0; i < 1200; i++){
 		VGA_PERIPH_MEM_mWriteMemory(BaseAddress + TEXT_MEM_OFF + i*4, 0x20);
 	}
 }
@@ -42,10 +42,12 @@ void draw_square(Xuint32 BaseAddress){
 		for (j = 0; j < 480; j++){
 			for (k = 0; k<(640/32); k++){
 				i = j*(640/32) + k;
-				if ((j > 200) && (j < 280) && (k > 8) && (k < 12)) {
+				if ((j > 200) && (j < 280) && (k > 8) && (k < 12))
+				{
 					VGA_PERIPH_MEM_mWriteMemory(BaseAddress + GRAPHICS_MEM_OFF + i*4, 0xFFFFFFFF);
 				}
-				else{
+				else
+				{
 					VGA_PERIPH_MEM_mWriteMemory(BaseAddress + GRAPHICS_MEM_OFF + i*4, 0x0);
 				}
 			}
