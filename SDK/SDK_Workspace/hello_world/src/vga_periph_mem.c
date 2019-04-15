@@ -23,6 +23,10 @@ void clear_text_screen(Xuint32 BaseAddress){
 	}
 }
 
+void print_char(Xuint32 BaseAddress, char c) {
+	VGA_PERIPH_MEM_mWriteMemory(BaseAddress + TEXT_MEM_OFF + cursor_position, c - 0x40);
+}
+
 void print_string(Xuint32 BaseAddress, unsigned char string_s[], int lenght){
 	int i;
 	for (i = 0; i < lenght; i++){
