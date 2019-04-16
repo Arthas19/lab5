@@ -60,13 +60,15 @@ int main()
 
     for (i = 0;  i < XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_HIGHADDR; i++) {
 
-        clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i);
-        clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i);
-    	draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i);
-        set_cursor(350 + i);
-        print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i, string_s, 29);
+        clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+        clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
 
-        for (j = 0; j < 100000; j++);
+        set_cursor(i);
+        print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 29);
+        set_cursor(350 + i);        
+    	draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+
+        for (j = 0; j < 100000; j++); // busy_work
     }
 
 
