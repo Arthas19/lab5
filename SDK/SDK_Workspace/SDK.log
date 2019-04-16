@@ -151,3 +151,29 @@
 11:03:27.899 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
 11:03:27.916 ERROR - Unable to read in MSS file D:\materija\ra89-2016\lab5\SDK\SDK_Workspace\hello_world_bsp\system.mss. 
 11:03:50.063 INFO  - Settings changed on project hello_world_bsp. Triggering a rebuild... 
+10:53:35.283 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+10:54:01.550 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+10:54:32.249 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+10:55:23.627 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+10:55:50.819 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Unknown Error
+ 
+10:58:36.509 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

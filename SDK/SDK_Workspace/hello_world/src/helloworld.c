@@ -46,9 +46,9 @@ void print(char *str);
 
 int main()
 {
-	int i, j;
+	int i, j, k;
     init_platform();
-    unsigned char string_s[] = "Sve su straze od Jovana Snega";
+    unsigned char string_s[] = "SVE SU STRAZE OD JOVANA SNEGA";
 
     VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x00, 0x0);      // direct mode      0
     VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x04, 0x3);      // display_mode     1
@@ -58,21 +58,67 @@ int main()
     VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x14, 0x0000FF); // background color 5
     VGA_PERIPH_MEM_mWriteMemory(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + 0x18, 0xFF0000); // frame color      6
 
-    for (i = 0;  i < XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_HIGHADDR; i++) {
+   // k = 1;
+//    while(1) {
+//		for (i = 0;  i < 1170; i += k) {
+//
+//			clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+//			clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+//
+//			print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 29);
+//
+//			draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i);
+//
+//			if (i == 64) {
+//				k = -1;
+//			}
+//
+//			if (i == 0) {
+//				k = 1;
+//			}
+//
+//			for (j = 0; j < 100000; j++); // busy_work
+//		}
+//    }
 
-        clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
-        clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
-
-        set_cursor(i);
-        print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, string_s, 29);
-        set_cursor(350 + i);        
-    	draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
-
-        for (j = 0; j < 100000; j++); // busy_work
-    }
-
-
-
-
+    moving_text(string_s,29);
+    moving_square();
     return 0;
+}
+
+void moving_text(unsigned char* s , int len)
+{
+	int i,k,j;
+	for(i = 0; i < 640 ; i+=k){
+		clear_text_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+		set_cursor(i);
+		print_string(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR, s, len);
+
+		if(i == 40-len){
+			k=-1;
+		}
+		if(i == 0){
+			k=1;
+		}
+
+		for(j = 0; j < 100000 ; j++);
+	}
+}
+
+void moving_square()
+{
+	int i,k,j;
+	for(i = 0; i<640 ; i+=k){
+		clear_graphics_screen(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR);
+		draw_square(XPAR_VGA_PERIPH_MEM_0_S_AXI_MEM0_BASEADDR + i);
+	}
+	if(i == 64){
+		k=-1;
+	}
+
+	if(i == 0){
+		k=1;
+	}
+
+	for (j = 0; j < 1000000000; j++);
 }
